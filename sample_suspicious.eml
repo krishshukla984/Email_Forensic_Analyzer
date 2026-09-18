@@ -1,0 +1,31 @@
+From: CEO <ceo@trusted-company.com>
+To: accounts@example.org
+Reply-To: ceo@trusted-company-support.com
+Return-Path: <bounce@trusted-company-support.com>
+Subject: URGENT: Invoice payment required
+Date: Sat, 30 Aug 2026 10:15:00 +0530
+Message-ID: <demo-12345@trusted-company-support.com>
+Received: from mail.example.net (203.0.113.45) by mx.example.org with ESMTP; Sat, 30 Aug 2026 10:14:58 +0530
+Received: from unknown (198.51.100.77) by mail.example.net; Sat, 30 Aug 2026 10:14:50 +0530
+Authentication-Results: mx.example.org; spf=fail smtp.mailfrom=trusted-company-support.com; dkim=fail header.d=trusted-company.com; dmarc=fail header.from=trusted-company.com
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY123"
+
+--BOUNDARY123
+Content-Type: text/plain; charset="utf-8"
+
+Hello Accounts Team,
+
+This is urgent. Please verify the invoice and click the link below immediately:
+https://login-example-security.test/verify
+
+Regards,
+CEO
+
+--BOUNDARY123
+Content-Type: text/plain
+Content-Disposition: attachment; filename="invoice.txt"
+
+PAYMENT DETAILS - DEMO ATTACHMENT ONLY
+
+--BOUNDARY123--
