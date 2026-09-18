@@ -1,0 +1,94 @@
+# MailTrace AI — Basic Prototype
+
+## What it demonstrates
+This prototype is a safe, static `.eml` email investigation dashboard.
+
+It implements:
+- Sender
+- Reply-To
+- Return-Path
+- Received headers
+- Message-ID
+- Sending/relay IP extraction
+- Authentication-Results with SPF/DKIM/DMARC interpretation
+- URL extraction
+- Attachment metadata and SHA-256 hashing
+- MIME structure
+- Timestamps/date information
+- IOC extraction
+- Explainable basic risk score
+- Original email SHA-256 evidence hash
+
+It deliberately does NOT execute URLs, open attachments, run malware, or claim exact attacker geolocation.
+
+## Run on Windows
+1. Install Python 3.11+.
+2. Open Command Prompt in this folder.
+3. Create a virtual environment using the command:
+   										"python -m venv .venv"
+4. Activate it using command:
+   						".venv\Scripts\activate"
+5. Install dependencies using command:
+   								"pip install -r requirements.txt"
+6. Start the program using the command:
+   								"streamlit run Astra.py"
+7. Open the local address shown by Streamlit, normally `http://localhost:8501`.
+8. Upload `sample_suspicious.eml`.
+
+## Run on macOS
+step 1 — Install Python
+
+If Python isn't installed, install Python 3.11 or newer.
+
+Then open Terminal and check version of python using command:
+													"python3 --version"
+Step 2 — Go to your project folder using terminal only for example using command:
+																"cd ~/Desktop/TechAstra"		
+Step 3 — Create virtual environment using the command:
+											"python3 -m venv .venv"
+											
+Step 4 — Activate it using command:
+							"source .venv/bin/activate"
+
+Your terminal should now show something similar to:
+										(.venv) MacBook:TechAstra$
+
+Step 5 — Install libraries using command:
+								"pip install streamlit requests pandas extract-msg openai"
+
+Step 6 — Start TechAstra using command:
+								"streamlit run app1.py"
+
+Then visit::
+			http://localhost:8501
+			
+## Run on Linux - Ubuntu/Debian
+
+Step 1 — Update packages
+					sudo apt update
+Step 2 — Install Python
+					sudo apt install python3 python3-pip python3-venv -y
+
+Check version of python using command:
+								python3 --version
+Step 3 — Enter project directory
+							cd ~/TechAstra
+Step 4 — Create virtual environment
+							python3 -m venv .venv
+Step 5 — Activate
+				source .venv/bin/activate
+Step 6 — Install dependencies
+						pip install streamlit requests pandas extract-msg openai
+Step 7 — Run
+			streamlit run app1.py
+
+Then visit:
+		http://localhost:8501
+
+
+## Demo flow
+Upload → Overview → Headers → URLs & IOCs → Attachments → MIME → Timeline → Evidence.
+
+## Important limitation
+The risk score is a demonstration rule engine, not a trained ML model. For the hackathon, it can later be extended with a lightweight NLP classifier, URL lexical model, threat-intelligence enrichment, graph correlation, and confidence-aware infrastructure mapping.
+
